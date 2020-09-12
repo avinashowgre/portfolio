@@ -53,12 +53,3 @@ export const App = () => {
     </ThemeProvider>
   );
 };
-/*start() {
-    this.freeze.current.start();
-    setTimeout(() => {
-      this.stop();
-      },20000);
-  }
-  stop() {
-    this.freeze.current.stop();
-  }*/

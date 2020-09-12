@@ -24,7 +24,7 @@ body {
   text-transform: uppercase;
   border-radius: 3px !important;
   background-color: black !important;
-  animation: fade-in 40s;
+  animation: fade-in 10s;
 }
 
 @keyframes fade-in {

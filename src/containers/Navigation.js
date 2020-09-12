@@ -1,23 +1,21 @@
-import React, { Fragment } from 'react';
-import {
-   Link as RouterLink
-} from "react-router-dom";
+import React, { Fragment } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
   title: {
-    color: 'white',
-  }
+    color: "white",
+  },
 }));
 
 function ElevationScroll(props) {
@@ -36,7 +34,6 @@ function ElevationScroll(props) {
   });
 }
 
-
 export const Navigation = (props) => {
   const { darkState, handleThemeChange } = props;
   const classes = useStyles();
@@ -47,29 +44,17 @@ export const Navigation = (props) => {
         <AppBar>
           <Toolbar>
             <Button color="inherit" to="/" component={RouterLink}>
-              <Typography
-                color="inherit"
-                noWrap
-                className={classes.title}
-              >
+              <Typography color="inherit" noWrap className={classes.title}>
                 Home
               </Typography>
             </Button>
             <Button color="inherit" to="/education" component={RouterLink}>
-              <Typography
-                color="inherit"
-                noWrap
-                className={classes.title}
-              >
+              <Typography color="inherit" noWrap className={classes.title}>
                 Portfolio
               </Typography>
             </Button>
             <Button color="inherit" to="/other" component={RouterLink}>
-              <Typography
-                color="inherit"
-                noWrap
-                className={classes.title}
-              >
+              <Typography color="inherit" noWrap className={classes.title}>
                 Other
               </Typography>
             </Button>
@@ -81,4 +66,4 @@ export const Navigation = (props) => {
       <Toolbar />
     </Fragment>
   );
-}
+};

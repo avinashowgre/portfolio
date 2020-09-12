@@ -1,19 +1,15 @@
-import React from 'react';
-import {
-  Route,
-  Switch,
-} from "react-router-dom";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
+import Container from "@material-ui/core/Container";
 
-import { Education, Navigation, Other, Home } from '../components';
+import { Education, Other, Home } from "../components";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
@@ -36,4 +32,4 @@ export const MainContent = () => {
       </Switch>
     </Container>
   );
-}
+};

@@ -1,12 +1,12 @@
-import React from 'react';
-import Typewriter from 'typewriter-effect';
-import ReactFreezeframe from 'react-freezeframe';
-import { Typewrite } from './Typewrite';
+import React from "react";
+import { Typewrite } from "./Typewrite";
 
 export const Education = () => {
   return (
     <div>
-      <Typewrite text={`Hello Avinash! Welcome to website dichik<br>Hello Avinash! Welcome to website dichik`} />
+      <Typewrite
+        text={`Hello Avinash! Welcome to website dichik<br>Hello Avinash! Welcome to website dichik`}
+      />
       {/*<ReactFreezeframe
         ref={this.freeze}
         options={{
@@ -18,4 +18,4 @@ export const Education = () => {
       </ReactFreezeframe>*/}
     </div>
   );
-}
+};

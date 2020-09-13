@@ -1,20 +1,21 @@
 import React, { Fragment } from "react";
-import { Link as RouterLink } from "react-router-dom";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import { NavLinkMui } from "../components";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
-  title: {
-    color: "white",
+  horizontal: {
+    display: "flex",
   },
 }));
 
@@ -43,21 +44,37 @@ export const Navigation = (props) => {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar>
-            <Button color="inherit" to="/" component={RouterLink}>
-              <Typography color="inherit" noWrap className={classes.title}>
-                Home
-              </Typography>
-            </Button>
-            <Button color="inherit" to="/education" component={RouterLink}>
-              <Typography color="inherit" noWrap className={classes.title}>
-                Portfolio
-              </Typography>
-            </Button>
-            <Button color="inherit" to="/other" component={RouterLink}>
-              <Typography color="inherit" noWrap className={classes.title}>
-                Other
-              </Typography>
-            </Button>
+            <List
+              component="nav"
+              aria-label="main mailbox folders"
+              classes={{ root: classes.horizontal }}
+            >
+              <ListItem key={"Home"} component={NavLinkMui} exact to={"/"}>
+                <Typography color="inherit" noWrap>
+                  Home
+                </Typography>
+              </ListItem>
+              <ListItem
+                key={"Education"}
+                component={NavLinkMui}
+                exact
+                to={"/education"}
+              >
+                <Typography color="inherit" noWrap>
+                  Education
+                </Typography>
+              </ListItem>
+              <ListItem
+                key={"Other"}
+                component={NavLinkMui}
+                exact
+                to={"/other"}
+              >
+                <Typography color="inherit" noWrap>
+                  Other
+                </Typography>
+              </ListItem>
+            </List>
             <div className={classes.grow} />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>

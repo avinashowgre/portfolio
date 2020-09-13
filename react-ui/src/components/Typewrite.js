@@ -2,16 +2,21 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 
 export const Typewrite = (props) => {
-  const { title, subtitle, paragraph } = props;
+  const { text } = props;
+  console.log(text);
   return (
     <Typewriter
       onInit={(typewriter) => {
         typewriter
-          .typeString(title)
-          .pauseFor(5000)
-          .typeString(subtitle)
-          .pauseFor(5000)
-          .typeString(paragraph)
+          .typeString(text)
+          .callFunction(() => {
+            console.log("String typed out!");
+          })
+          .pauseFor(2500)
+          .deleteAll()
+          .callFunction(() => {
+            console.log("All strings were deleted");
+          })
           .start();
       }}
     />

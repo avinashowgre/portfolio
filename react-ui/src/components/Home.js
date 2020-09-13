@@ -6,7 +6,7 @@ import { Typewrite } from "./Typewrite";
 import { FreezeFrame } from "./FreezeFrame";
 
 const professionDescription = {
-  title: `<h1>Hey there! <br> I'm Avinash Mellamputi<br> <p class="job-title">Front End Engineer</p></h1>`,
+  title: `<h1>Hey there! <h1>`,
 };
 
 export const Home = () => {
@@ -15,13 +15,8 @@ export const Home = () => {
   return (
     <Grid container spacing={3}>
       <Grid item md={6}>
-        <Box display="flex" flexDirection="column" justifyContent="center">
-          <Typewrite title={title} subtitle={subtitle} paragraph={paragraph} />
-
-          <Chip
-            label={"I create web design & application"}
-            className={"chip"}
-          />
+        <Box display="flex" justifyContent="flex-end">
+          <Typewrite text={title} />
         </Box>
       </Grid>
       <Grid item md={6}>

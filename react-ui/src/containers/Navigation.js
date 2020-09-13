@@ -19,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const navigationItems = [
+  { label: "Home", url: "/" },
+  { label: "About", url: "/about" },
+  { label: "Other", url: "/other" },
+];
+
 function ElevationScroll(props) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -44,36 +50,19 @@ export const Navigation = (props) => {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar>
-            <List
-              component="nav"
-              aria-label="main mailbox folders"
-              classes={{ root: classes.horizontal }}
-            >
-              <ListItem key={"Home"} component={NavLinkMui} exact to={"/"}>
-                <Typography color="inherit" noWrap>
-                  Home
-                </Typography>
-              </ListItem>
-              <ListItem
-                key={"Education"}
-                component={NavLinkMui}
-                exact
-                to={"/education"}
-              >
-                <Typography color="inherit" noWrap>
-                  Education
-                </Typography>
-              </ListItem>
-              <ListItem
-                key={"Other"}
-                component={NavLinkMui}
-                exact
-                to={"/other"}
-              >
-                <Typography color="inherit" noWrap>
-                  Other
-                </Typography>
-              </ListItem>
+            <List component="nav" classes={{ root: classes.horizontal }}>
+              {navigationItems.map((item) => (
+                <ListItem
+                  key={item.label}
+                  component={NavLinkMui}
+                  exact
+                  to={item.url}
+                >
+                  <Typography color="inherit" noWrap>
+                    {item.label}
+                  </Typography>
+                </ListItem>
+              ))}
             </List>
             <div className={classes.grow} />
             <Switch checked={darkState} onChange={handleThemeChange} />

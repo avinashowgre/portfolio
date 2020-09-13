@@ -1,25 +1,7 @@
 import React from "react";
-import { Typewriter } from "react-typewriting-effect";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  root: {
-    display: "flex",
-    justifyContent: "center",
-  },
-});
+import Typist from "react-typist";
 
 export const Typewrite = (props: any) => {
-  const { text } = props;
-  const classes = useStyles();
-  console.log(text);
-  return (
-    <Typewriter
-      string={text}
-      delay={80}
-      stopBlinkinOnComplete
-      onComplete={() => {}}
-      className={classes.root}
-    />
-  );
+  const { children } = props;
+  return <Typist>{children}</Typist>;
 };

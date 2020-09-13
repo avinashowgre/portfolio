@@ -27,7 +27,7 @@ export const ListItemLink = (props: ListItemLinkProps) => {
 
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem component={renderLink}>
         <ListItemText primary={primary} />
       </ListItem>
     </li>

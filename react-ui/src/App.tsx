@@ -29,18 +29,6 @@ export const App = () => {
       MuiListItem: {
         root: {
           color: "#000000",
-
-          "&$selected": {
-            backgroundColor: "transparent",
-            color: textColor,
-
-            "&:hover": {
-              backgroundColor: "transparent",
-            },
-          },
-          "&:active": {
-            backgroundColor: "#ffffff",
-          },
         },
       },
     },

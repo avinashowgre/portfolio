@@ -1,24 +1,24 @@
 import React from "react";
-import Typewriter from "typewriter-effect";
+import { Typewriter } from "react-typewriting-effect";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+  },
+});
 
 export const Typewrite = (props) => {
   const { text } = props;
+  const classes = useStyles();
   console.log(text);
   return (
     <Typewriter
-      onInit={(typewriter) => {
-        typewriter
-          .typeString(text)
-          .callFunction(() => {
-            console.log("String typed out!");
-          })
-          .pauseFor(2500)
-          .deleteAll()
-          .callFunction(() => {
-            console.log("All strings were deleted");
-          })
-          .start();
-      }}
+      string={text}
+      delay={80}
+      stopBlinkinOnComplete
+      className={classes.root}
     />
   );
 };

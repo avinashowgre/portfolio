@@ -23,7 +23,7 @@ export const MainContent = () => {
         <Route path="/other">
           <Other />
         </Route>
-        <Route path="/education">
+        <Route path="/about">
           <Education />
         </Route>
         <Route path="/">

@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 export const Home = () => {
-  const { title, subtitle, paragraph } = professionDescription;
+  const { title } = professionDescription;
   const classes = useStyles();
 
   return (

@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import { NavLinkMui } from "../components";
+import { ListItemLink } from "../components";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -52,16 +52,7 @@ export const Navigation = (props) => {
           <Toolbar>
             <List component="nav" classes={{ root: classes.horizontal }}>
               {navigationItems.map((item) => (
-                <ListItem
-                  key={item.label}
-                  component={NavLinkMui}
-                  exact
-                  to={item.url}
-                >
-                  <Typography color="inherit" noWrap>
-                    {item.label}
-                  </Typography>
-                </ListItem>
+                <ListItemLink to={item.url} primary={item.label} />
               ))}
             </List>
             <div className={classes.grow} />

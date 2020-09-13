@@ -18,6 +18,7 @@ export const Typewrite = (props) => {
       string={text}
       delay={80}
       stopBlinkinOnComplete
+      onComplete={() => {}}
       className={classes.root}
     />
   );

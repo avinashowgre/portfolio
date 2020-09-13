@@ -2,4 +2,4 @@ export * from "./Education";
 export * from "./Home";
 export * from "./Other";
 export * from "./Typewrite";
-export * from "./NavLinkMui";
+export * from "./ListItemLink";

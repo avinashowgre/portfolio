@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { createRef, useEffect } from "react";
 import ReactFreezeframe from "react-freezeframe";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 export const FreezeFrame = (props) => {
   const { url } = props;
   const classes = useStyles();
-  const freeze = new React.createRef();
+  const freeze = createRef<HTMLDivElement>();
   useEffect(() => {
     let stopTimeout, startTimeout;
     const start = () => {

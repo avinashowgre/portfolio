@@ -25,7 +25,7 @@ const navigationItems = [
   { label: "Other", url: "/other" },
 ];
 
-function ElevationScroll(props) {
+function ElevationScroll(props: any) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
@@ -41,7 +41,7 @@ function ElevationScroll(props) {
   });
 }
 
-export const Navigation = (props) => {
+export const Navigation = (props: any) => {
   const { darkState, handleThemeChange } = props;
   const classes = useStyles();
 
@@ -52,7 +52,11 @@ export const Navigation = (props) => {
           <Toolbar>
             <List component="nav" classes={{ root: classes.horizontal }}>
               {navigationItems.map((item) => (
-                <ListItemLink to={item.url} primary={item.label} />
+                <ListItemLink
+                  key={item.label}
+                  to={item.url}
+                  primary={item.label}
+                />
               ))}
             </List>
             <div className={classes.grow} />

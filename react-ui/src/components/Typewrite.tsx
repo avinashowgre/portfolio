@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const Typewrite = (props) => {
+export const Typewrite = (props: any) => {
   const { text } = props;
   const classes = useStyles();
   console.log(text);

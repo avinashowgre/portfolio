@@ -15,7 +15,12 @@ export const ListItemLink = (props: ListItemLinkProps) => {
   const renderLink = React.useMemo(
     () =>
       React.forwardRef<any, Omit<RouterLinkProps, "to">>((itemProps, ref) => (
-        <NavLink to={to} ref={ref} {...itemProps} />
+        <NavLink
+          to={to}
+          ref={ref}
+          {...itemProps}
+          activeClassName="Mui-selected"
+        />
       )),
     [to]
   );

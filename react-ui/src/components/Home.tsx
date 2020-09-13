@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Chip from "@material-ui/core/Chip";
 import Box from "@material-ui/core/Box";
 import { Typewrite } from "./Typewrite";
-import { FreezeFrame } from "./FreezeFrame";
 import { makeStyles } from "@material-ui/core/styles";
 
 const professionDescription = {
@@ -17,6 +16,10 @@ const useStyles = makeStyles({
     flexDirection: "column",
     position: "relative",
     top: 80,
+  },
+  responsiveImage: {
+    height: "auto",
+    width: "100%",
   },
 });
 
@@ -35,10 +38,9 @@ export const Home = () => {
       </Grid>
       <Grid item md={6}>
         <Box display="flex" justifyContent="flex-end">
-          <FreezeFrame
-            url={
-              "https://i.pinimg.com/originals/e1/f3/41/e1f3413bf5036045713341394f617225.gif"
-            }
+          <img
+            className={classes.responsiveImage}
+            src="https://colorlib.com/preview/theme/satner/img/banner/home-right.png"
           />
         </Box>
       </Grid>

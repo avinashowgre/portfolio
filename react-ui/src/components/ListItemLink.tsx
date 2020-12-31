@@ -10,24 +10,16 @@ interface ListItemLinkProps {
 }
 
 export const ListItemLink = (props: ListItemLinkProps) => {
-  const { icon, primary, to } = props;
-
-  const renderLink = React.useMemo(
-    () =>
-      React.forwardRef<any, Omit<RouterLinkProps, "to">>((itemProps, ref) => (
-        <NavLink
-          to={to}
-          ref={ref}
-          {...itemProps}
-          activeClassName="Mui-selected"
-        />
-      )),
-    [to]
-  );
+  const { primary, to } = props;
 
   return (
     <li>
-      <ListItem component={renderLink}>
+      <ListItem
+        component={NavLink}
+        to={to}
+        activeClassName="Mui-selected"
+        exact
+      >
         <ListItemText primary={primary} />
       </ListItem>
     </li>

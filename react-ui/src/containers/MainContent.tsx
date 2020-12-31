@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Container from "@material-ui/core/Container";
 
-import { Education, Other, Home } from "../components";
+import { About, Home, Projects } from "../components";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -20,11 +20,11 @@ export const MainContent = () => {
   return (
     <Container className={classes.container}>
       <Switch>
-        <Route path="/other">
-          <Other />
+        <Route path="/projects">
+          <Projects />
         </Route>
         <Route path="/about">
-          <Education />
+          <About />
         </Route>
         <Route path="/">
           <Home />

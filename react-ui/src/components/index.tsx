@@ -1,5 +1,5 @@
-export * from "./Education";
+export * from "./About";
 export * from "./Home";
-export * from "./Other";
+export * from "./Projects";
 export * from "./Typewrite";
 export * from "./ListItemLink";

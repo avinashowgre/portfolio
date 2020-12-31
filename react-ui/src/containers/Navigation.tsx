@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 const navigationItems = [
   { label: "Home", url: "/" },
   { label: "About", url: "/about" },
-  { label: "Other", url: "/other" },
+  { label: "Projects", url: "/projects" },
 ];
 
 function ElevationScroll(props: any) {

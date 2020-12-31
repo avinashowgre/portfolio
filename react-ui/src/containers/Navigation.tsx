@@ -1,24 +1,31 @@
 import React, { Fragment } from "react";
-import { Link as RouterLink } from "react-router-dom";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import { ListItemLink } from "../components";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
-  title: {
-    color: "white",
+  horizontal: {
+    display: "flex",
   },
 }));
 
-function ElevationScroll(props) {
+const navigationItems = [
+  { label: "Home", url: "/" },
+  { label: "About", url: "/about" },
+  { label: "Projects", url: "/projects" },
+];
+
+function ElevationScroll(props: any) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
@@ -34,7 +41,7 @@ function ElevationScroll(props) {
   });
 }
 
-export const Navigation = (props) => {
+export const Navigation = (props: any) => {
   const { darkState, handleThemeChange } = props;
   const classes = useStyles();
 
@@ -43,21 +50,15 @@ export const Navigation = (props) => {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar>
-            <Button color="inherit" to="/" component={RouterLink}>
-              <Typography color="inherit" noWrap className={classes.title}>
-                Home
-              </Typography>
-            </Button>
-            <Button color="inherit" to="/education" component={RouterLink}>
-              <Typography color="inherit" noWrap className={classes.title}>
-                Portfolio
-              </Typography>
-            </Button>
-            <Button color="inherit" to="/other" component={RouterLink}>
-              <Typography color="inherit" noWrap className={classes.title}>
-                Other
-              </Typography>
-            </Button>
+            <List component="nav" classes={{ root: classes.horizontal }}>
+              {navigationItems.map((item) => (
+                <ListItemLink
+                  key={item.label}
+                  to={item.url}
+                  primary={item.label}
+                />
+              ))}
+            </List>
             <div className={classes.grow} />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>

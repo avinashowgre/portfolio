@@ -1,12 +1,10 @@
 import React from "react";
 import { Typewrite } from "./Typewrite";
 
-export const Education = () => {
+export const About = () => {
   return (
     <div>
-      <Typewrite
-        text={`Hello Avinash! Welcome to website dichik<br>Hello Avinash! Welcome to website dichik`}
-      />
+      About
       {/*<ReactFreezeframe
         ref={this.freeze}
         options={{

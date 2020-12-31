@@ -3,12 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { MainContent, Navigation } from "./containers";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import {
-  orange,
-  lightBlue,
-  deepPurple,
-  deepOrange,
-} from "@material-ui/core/colors";
+import { deepPurple, deepOrange } from "@material-ui/core/colors";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const initialState = {
@@ -26,9 +21,24 @@ export const App = () => {
   };
 
   const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
+  const mainPrimaryColor = darkState ? "#000000" : "#ffffff";
   const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+  const textColor = darkState ? "#ffffff" : "#4458dc";
   const darkTheme = createMuiTheme({
+    overrides: {
+      MuiListItem: {
+        root: {
+          color: "#000000",
+
+          "&$selected": {
+            color: "#673ab7",
+            "&, &:hover": {
+              backgroundColor: "transparent",
+            },
+          },
+        },
+      },
+    },
     palette: {
       type: palletType,
       primary: {
@@ -53,12 +63,3 @@ export const App = () => {
     </ThemeProvider>
   );
 };
-/*start() {
-    this.freeze.current.start();
-    setTimeout(() => {
-      this.stop();
-      },20000);
-  }
-  stop() {
-    this.freeze.current.stop();
-  }*/
